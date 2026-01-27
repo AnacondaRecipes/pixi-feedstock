@@ -53,4 +53,5 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
+  license_family: BSD
 
