@@ -18,7 +18,6 @@ requirements:
     - {{ compiler( 'rust' )}}
     - cargo-bundle-licenses
     - {{ compiler( 'c' )}}
-    - {{ stdlib( 'c' )}}
     - {{ compiler( 'cxx' )}}
     - pkg-config
     - cmake
