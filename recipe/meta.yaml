@@ -18,7 +18,7 @@ requirements:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}  # [not win]
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - pkg-config
     - cmake
