@@ -1,14 +1,14 @@
-From 9b1677cba20cf6143420b05223a25d744918fc6f Mon Sep 17 00:00:00 2001
+From dd0c6621ecb69cfb71dd531630f70c5c9ff93902 Mon Sep 17 00:00:00 2001
 From: ViridianMelody <mlove@anaconda.com>
-Date: Fri, 30 Jan 2026 12:17:33 -0800
+Date: Fri, 30 Jan 2026 12:39:19 -0800
 Subject: [PATCH] Fix reqwest-middleware commit IDs
 
 ---
- Cargo.toml | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ Cargo.toml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/Cargo.toml b/Cargo.toml
-index 2b9d21c0f..b428039f0 100644
+index 2b9d21c0f..85d0f508a 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
 @@ -168,8 +168,8 @@ retry-policies = "0.4"
@@ -22,6 +22,17 @@ index 2b9d21c0f..b428039f0 100644
  rlimit = "0.10.2"
  rstest = "0.26.0"
  same-file = "1.0.6"
+@@ -245,8 +245,8 @@ zstd = { version = "0.13.3", default-features = false }
+ 
+ [patch.crates-io]
+ # This is a temporary patch to get `cargo vendor` to work with the `uv` and pep508_rs` crates.
+-reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
+-reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
++reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "591ab444ec58b0e241724fef8a76a655dcaafdbc" }
++reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "591ab444ec58b0e241724fef8a76a655dcaafdbc" }
+ version-ranges = { git = "https://github.com/astral-sh/pubgrub", rev = "d8efd77673c9a90792da9da31b6c0da7ea8a324b" }
+ 
+ [profile.ci]
 -- 
 2.50.1 (Apple Git-155)
 
