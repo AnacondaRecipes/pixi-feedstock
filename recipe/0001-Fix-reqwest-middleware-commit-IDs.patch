@@ -1,24 +1,29 @@
-From dd0c6621ecb69cfb71dd531630f70c5c9ff93902 Mon Sep 17 00:00:00 2001
+From ca895bea3b2588238160fae7a774755930375080 Mon Sep 17 00:00:00 2001
 From: ViridianMelody <mlove@anaconda.com>
-Date: Fri, 30 Jan 2026 12:39:19 -0800
+Date: Mon, 2 Feb 2026 07:31:10 -0800
 Subject: [PATCH] Fix reqwest-middleware commit IDs
 
 ---
- Cargo.toml | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ Cargo.toml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/Cargo.toml b/Cargo.toml
-index 2b9d21c0f..85d0f508a 100644
+index 2b9d21c0f..4eeee8d2b 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -168,8 +168,8 @@ retry-policies = "0.4"
- # reqwest-middleware = "0.4"
- # reqwest-retry = "0.7.0"
+@@ -165,11 +165,11 @@ recipe-stage0 = { path = "crates/recipe-stage0" }
+ regex = "1.11.1"
+ reqwest = { version = "0.12.12", default-features = false }
+ retry-policies = "0.4"
+-# reqwest-middleware = "0.4"
+-# reqwest-retry = "0.7.0"
++reqwest-middleware = "0.4"
++reqwest-retry = "0.7.0"
  bzip2 = "0.6.1"
 -reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
 -reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
-+reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "1485f61e20c8cd31cabb663788f06206c19cabaf" }
-+reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "1485f61e20c8cd31cabb663788f06206c19cabaf" }
++# reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
++# reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
  rlimit = "0.10.2"
  rstest = "0.26.0"
  same-file = "1.0.6"
@@ -28,8 +33,8 @@ index 2b9d21c0f..85d0f508a 100644
  # This is a temporary patch to get `cargo vendor` to work with the `uv` and pep508_rs` crates.
 -reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
 -reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "7650ed76215a962a96d94a79be71c27bffde7ab2" }
-+reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "1485f61e20c8cd31cabb663788f06206c19cabaf" }
-+reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "1485f61e20c8cd31cabb663788f06206c19cabaf" }
++reqwest-middleware = "0.4"
++reqwest-retry = "0.7.0"
  version-ranges = { git = "https://github.com/astral-sh/pubgrub", rev = "d8efd77673c9a90792da9da31b6c0da7ea8a324b" }
  
  [profile.ci]
