@@ -26,6 +26,7 @@ requirements:
     - cmake
     - cargo-auditable
     - make  # [unix]
+    - git  # [win]
   host:
     - openssl  # [linux]
     - libgit2  # [win]
