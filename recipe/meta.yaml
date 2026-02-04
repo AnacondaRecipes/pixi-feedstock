@@ -30,7 +30,6 @@ requirements:
   host:
     - openssl  # [linux]
     - libgit2  # [win]
-    - git  # [win]
 
 tests:
   commands:
