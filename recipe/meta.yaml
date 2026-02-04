@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/prefix-dev/pixi/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 197d576d68e3bf1b0545744a98974b4b519393f2b223b7fb7270015f97381e83
-  #patches:  # [win]
-  #  - 0001-Fix-reqwest-middleware-commit-IDs.patch  # [win]
 
 build:
   number: 0
