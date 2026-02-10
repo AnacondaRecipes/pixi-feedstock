@@ -19,7 +19,6 @@ requirements:
     - cargo-bundle-licenses
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - {{ compiler('cxx') }}
     - pkg-config
     - cmake
     - cargo-auditable
