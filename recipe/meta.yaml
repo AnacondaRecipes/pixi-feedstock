@@ -1,0 +1,58 @@
+{% set name = "pixi" %}
+{% set version = "0.63.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/prefix-dev/pixi/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 197d576d68e3bf1b0545744a98974b4b519393f2b223b7fb7270015f97381e83
+
+build:
+  number: 0
+
+
+requirements:
+  build:
+    - {{ compiler('rust') }}
+    - cargo-bundle-licenses
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - pkg-config
+    - cmake
+    - cargo-auditable
+    - make  # [unix]
+    - git  # [win]
+  host:
+    - openssl  # [linux]
+    - libgit2  # [win]
+
+tests:
+  commands:
+    - pixi --help
+
+about:
+  home: https://github.com/prefix-dev/pixi
+  dev_url: https://github.com/prefix-dev/pixi
+  doc_url: https://pixi.prefix.dev
+  summary: pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.
+  description: |
+    pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.
+
+    pixi provides all developers the exceptional experience that is usually found with package managers like cargo or yarn but for any language.
+
+    # Highlights
+
+    - Support for multiple languages like Python, C++ and R using Conda packages
+    - All OS's: Linux, Windows, macOS (including Apple Silicon)
+    - A lockfile is always included and always up-to-date.
+    - A clean and simple Cargo-like command-line interface.
+    - Install tools per-project or system-wide.
+    - Completely written in Rust and build on top of the rattler library.
+  license: BSD-3-Clause
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
+  license_family: BSD
+
