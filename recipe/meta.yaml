@@ -22,6 +22,7 @@ requirements:
     - pkg-config
     - cmake
     - make  # [unix]
+    - git
   host:
     - openssl {{ openssl }} # [linux]
 
