@@ -1,36 +1,39 @@
 {% set name = "pixi" %}
-{% set version = "0.67.1" %}
+{% set version = "0.70.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/prefix-dev/pixi/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1a38eef962d0e4993bfe34943b68ed1c190fb428d74c298f6fd261b95961d9ca
+  url: https://github.com/prefix-dev/pixi/releases/download/v{{ version }}/source.tar.gz
+  sha256: 1ceef428fa5877790a5753e143b4b480ff9e15b4094e610ba8573dcf1eeb9004
 
 build:
   number: 0
 
-
 requirements:
   build:
     - {{ compiler('rust') }}
-    - cargo-bundle-licenses
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
+    - cargo-auditable
+    - cargo-bundle-licenses
     - pkg-config
     - cmake
-    - cargo-auditable
     - make  # [unix]
-    - git  # [win]
+    - git
   host:
-    - openssl  # [linux]
-    - libgit2  # [win]
+    - openssl {{ openssl }} # [linux]
 
-tests:
+test:
   commands:
     - pixi --help
+    - test -f $PREFIX/share/bash-completion/completions/pixi # [unix]
+    - test -f $PREFIX/share/zsh/site-functions/_pixi # [unix]
+    - test -f $PREFIX/share/fish/vendor_completions.d/pixi.fish # [unix]
+    - PIXI_HOME=$(mktemp -d) pixi init . && grep repo.anaconda.com/pkgs/main pixi.toml  # [unix]
+    - set PIXI_HOME=%TEMP%\pixi-ph & mkdir %PIXI_HOME% 2>nul & pixi init . & findstr repo.anaconda.com/pkgs/main pixi.toml  # [win]
 
 about:
   home: https://github.com/prefix-dev/pixi
