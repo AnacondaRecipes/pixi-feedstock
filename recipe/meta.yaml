@@ -15,21 +15,22 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - cargo-bundle-licenses
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
+    - cargo-auditable
+    - cargo-bundle-licenses
     - pkg-config
     - cmake
-    - cargo-auditable
     - make  # [unix]
-    - git  # [win]
   host:
-    - openssl  # [linux]
-    - libgit2  # [win]
+    - openssl {{ openssl }} # [linux]
 
-tests:
+test:
   commands:
     - pixi --help
+    - test -f $PREFIX/share/bash-completion/completions/pixi # [unix]
+    - test -f $PREFIX/share/zsh/site-functions/_pixi # [unix]
+    - test -f $PREFIX/share/fish/vendor_completions.d/pixi.fish # [unix]
     - PIXI_HOME=$(mktemp -d) pixi init . && grep repo.anaconda.com/pkgs/main pixi.toml  # [unix]
     - set PIXI_HOME=%TEMP%\pixi-ph & mkdir %PIXI_HOME% 2>nul & pixi init . & findstr repo.anaconda.com/pkgs/main pixi.toml  # [win]
 

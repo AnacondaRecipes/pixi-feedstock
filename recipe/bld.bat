@@ -1,5 +1,5 @@
 set CARGO_NET_GIT_FETCH_WITH_CLI=true
-
+set CARGO_PROFILE_RELEASE_STRIP=symbols
 subst Y: "%SRC_DIR%"
 set CARGO_HOME=Y:\.cargo
 
