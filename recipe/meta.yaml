@@ -1,5 +1,5 @@
 {% set name = "pixi" %}
-{% set version = "0.76.2" %}
+{% set version = "0.77.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/pixi/releases/download/v{{ version }}/source.tar.gz
-  sha256: dee0c22ee232f070c9481142b4c60c57f5acf5987b675c82b824a7636b2b9767
+  sha256: 3aabd20200841f120ef238ec547d15c88afbfae52e28a16d7f4f9370a1960027
 
 build:
   number: 0
@@ -24,14 +24,19 @@ requirements:
     - make  # [unix]
     - git
   host:
-    - openssl {{ openssl }} # [linux]
+    - openssl {{ openssl }}  # [linux]
+    - python
+    - pip
+  run:
+    - python
+    - setuptools
 
 test:
   commands:
     - pixi --help
-    - test -f $PREFIX/share/bash-completion/completions/pixi # [unix]
-    - test -f $PREFIX/share/zsh/site-functions/_pixi # [unix]
-    - test -f $PREFIX/share/fish/vendor_completions.d/pixi.fish # [unix]
+    - test -f $PREFIX/share/bash-completion/completions/pixi  # [unix]
+    - test -f $PREFIX/share/zsh/site-functions/_pixi  # [unix]
+    - test -f $PREFIX/share/fish/vendor_completions.d/pixi.fish  # [unix]
     - PIXI_HOME=$(mktemp -d) pixi init . && grep repo.anaconda.com/pkgs/main pixi.toml  # [unix]
     - set PIXI_HOME=%TEMP%\pixi-ph & mkdir %PIXI_HOME% 2>nul & pixi init . & findstr repo.anaconda.com/pkgs/main pixi.toml  # [win]
 
@@ -58,4 +63,3 @@ about:
     - LICENSE
     - THIRDPARTY.yml
   license_family: BSD
-
