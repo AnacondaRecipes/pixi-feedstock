@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/pixi/releases/download/v{{ version }}/source.tar.gz
-  sha256: 3aabd20200841f120ef238ec547d15c88afbfae52e28a16d7f4f9370a1960027
+  sha256: 275ebaef4e5b40c8fb130b9596e9989f015f40bfdbaecd849d911a9617a3c67f
 
 build:
   number: 0
@@ -63,3 +63,8 @@ about:
     - LICENSE
     - THIRDPARTY.yml
   license_family: BSD
+
+extra:
+  skip-lints:
+    - python_build_tools_in_host
+    - missing_imports_or_run_test_py
