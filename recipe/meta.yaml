@@ -1,8 +1,8 @@
 {% set name = "pixi" %}
-{% set version = "0.77.1" %}
+{% set version = "0.81.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
