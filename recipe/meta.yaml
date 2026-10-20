@@ -1,5 +1,5 @@
 {% set name = "pixi" %}
-{% set version = "0.81.0" %}
+{% set version = "0.82.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/pixi/releases/download/v{{ version }}/source.tar.gz
-  sha256: 275ebaef4e5b40c8fb130b9596e9989f015f40bfdbaecd849d911a9617a3c67f
+  sha256: cac8887774af2a54d1f303001769ec781558e3fe74797402931ee3f70ae605cf
 
 build:
   number: 0
@@ -25,7 +25,11 @@ requirements:
     - git
   host:
     - openssl {{ openssl }}  # [linux]
+    - python
+    - pip
   run:
+    - python
+    - setuptools
 
 test:
   commands:
