@@ -11,12 +11,14 @@ source:
 
 build:
   number: 0
+  script:
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('rust') }}
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
     - cargo-auditable
     - cargo-bundle-licenses
     - pkg-config
