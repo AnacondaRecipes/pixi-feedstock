@@ -25,7 +25,11 @@ requirements:
     - git
   host:
     - openssl {{ openssl }}  # [linux]
+    - python
+    - pip
   run:
+    - python
+    - setuptools
 
 test:
   commands:
