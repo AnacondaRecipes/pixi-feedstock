@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [win and arm64]
 
 requirements:
   build:
