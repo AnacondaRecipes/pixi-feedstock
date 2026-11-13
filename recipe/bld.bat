@@ -8,6 +8,14 @@ rem https://github.com/prefix-dev/pixi/blob/v0.76.1/crates/pixi_consts/src/const
 set PIXI_DEFAULT_CHANNELS=https://repo.anaconda.com/pkgs/main,https://repo.anaconda.com/pkgs/msys2
 
 cargo install --locked --root %PREFIX% --no-track --path crates/pixi
+if errorlevel 1 (
+    echo [bld.bat] ERROR: cargo install failed
+    exit /b 1
+)
 cargo-bundle-licenses --format yaml --output "%SRC_DIR%/THIRDPARTY.yml"
+if errorlevel 1 (
+    echo [bld.bat] ERROR: cargo-bundle-licenses failed
+    exit /b 1
+)
 
 subst Y: /d
